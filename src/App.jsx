@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Header from './components/Header';
+import Sidebar from './components/Sidebar';
 import SimulationForm from './components/SimulationForm';
 import ResultsCard from './components/ResultsCard';
 import HistoryModal from './components/HistoryModal';
@@ -55,7 +56,9 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-row flex">
+      <Sidebar />
+      <div className='flex-1 flex flex-col'>
       <Header />
 
       <main className="flex-1 max-w-6xl w-full mx-auto px-6 py-12 lg:py-16">
@@ -161,6 +164,7 @@ export default function App() {
         error={historyError}
         onRetry={handleRetryHistory}
       />
+    </div>
     </div>
   );
 }
