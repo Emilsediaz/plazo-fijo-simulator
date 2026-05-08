@@ -10,6 +10,11 @@ export default function Sidebar() {
         Simulador 
         </p>
         </div>
+        <nav className="mt-10 flex flex-col gap-1"> 
+          <button>Dashboard</button>
+          <button>Simulador</button>
+          <button>Reportes</button>
+        </nav>
     </aside>
   );
 }
