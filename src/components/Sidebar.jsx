@@ -2,14 +2,27 @@
 export default function Sidebar({isOpen, onClose}) {
   return ( 
     <aside className={`${isOpen ? 'flex' : 'hidden'}  md:flex w-52 bg-moss-900 text-ink-50 min-h-screen p-6 flex-col`}> 
-    <div> 
-      <h1 className="font-display text-xl font-semibold">
-        Capital 
-        <span className="text-gold-400">.</span>
-        </h1><p className="text-[10px] uppercase tracking-[0.2em] text-ink-200/70 mt-1">
-        Simulador 
-        </p>
-        </div>
+    <div className="flex items-start justify-between">
+  <div>
+    <h1 className="font-display text-xl font-semibold">
+      Capital 
+      <span className="text-gold-400">.</span>
+    </h1>
+    <p className="text-[10px] uppercase tracking-[0.2em] text-ink-200/70 mt-1">
+      Simulador 
+    </p>
+  </div>
+
+  <button
+    onClick={onClose}
+    className="md:hidden p-1 -mr-1 text-ink-200/70 hover:text-ink-50"
+    aria-label="Cerrar menú"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+    </svg>
+  </button>
+</div>
         <nav className="mt-10 flex flex-col gap-1"> 
           <button className=" text-left px-3 py-2.5 rounded-lg text-sm text-ink-200/80 hover:bg-moss-800 hover:text-ink-50 transition-colors flex items-center gap-3">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">

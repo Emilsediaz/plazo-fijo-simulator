@@ -60,7 +60,7 @@ export default function App() {
     <div className="min-h-screen flex">
       <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
       <div className='flex-1 flex flex-col'>
-      <Header />
+      <Header onOpenSidebar={() => setIsSidebarOpen(true)} />
 
       <main className="flex-1 max-w-6xl w-full mx-auto px-6 py-12 lg:py-16">
         {/* Hero */}

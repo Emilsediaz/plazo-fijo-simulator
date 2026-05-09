@@ -1,10 +1,22 @@
-export default function Header() {
+export default function Header({ onOpenSidebar}) {
   return (
     <header className="border-b border-ink-200/60 bg-ink-50/95 backdrop-blur-md sticky top-0 z-20">
       <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-full bg-moss-800 flex items-center justify-center">
-            <svg
+          <div className="flex items-center gap-4">
+            <button
+        onClick={onOpenSidebar} 
+        className="md:hidden p-2 -ml-2 text-moss-900"
+        aria-label="Abri menu" >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+           strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          
+           
+            </button>
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-full bg-moss-800 flex items-center justify-center">
+                 <svg
               viewBox="0 0 24 24"
               fill="none"
               className="w-5 h-5 text-gold-400"
@@ -19,6 +31,7 @@ export default function Header() {
               <path d="M14 7h7v7" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
+          
           <div>
             <h1 className="font-display text-xl font-semibold text-moss-900 leading-none">
               Capital
@@ -27,6 +40,7 @@ export default function Header() {
             <p className="text-[10px] uppercase tracking-[0.2em] text-moss-700/70 mt-0.5">
               Simulador de inversiones
             </p>
+          </div>
           </div>
         </div>
         <div className="hidden sm:flex items-center gap-2 text-xs text-moss-700/60 font-mono">
