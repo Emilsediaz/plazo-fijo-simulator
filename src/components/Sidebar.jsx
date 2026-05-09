@@ -1,7 +1,7 @@
 // src/components/Sidebar.jsx
-export default function Sidebar() {
+export default function Sidebar({isOpen, onClose}) {
   return ( 
-    <aside className="w-52 bg-moss-900 text-ink-50 min-h-screen p-6 flex flex-col"> 
+    <aside className={`${isOpen ? 'flex' : 'hidden'}  md:flex w-52 bg-moss-900 text-ink-50 min-h-screen p-6 flex-col`}> 
     <div> 
       <h1 className="font-display text-xl font-semibold">
         Capital 

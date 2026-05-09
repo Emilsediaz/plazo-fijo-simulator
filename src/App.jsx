@@ -8,6 +8,7 @@ import ErrorState from './components/ErrorState';
 import { calcularIntereses, obtenerHistorial } from './services/api';
 
 export default function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [result, setResult] = useState(null);
   const [isCalculating, setIsCalculating] = useState(false);
   const [calcError, setCalcError] = useState(null);
@@ -56,8 +57,8 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-row flex">
-      <Sidebar />
+    <div className="min-h-screen flex">
+      <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
       <div className='flex-1 flex flex-col'>
       <Header />
 
